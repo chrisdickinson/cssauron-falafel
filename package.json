@@ -1,0 +1,25 @@
+{
+  "name": "cssauron-falafel",
+  "version": "0.0.0",
+  "description": "falafel bindings for cssauron",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chrisdickinson/cssauron-falafel.git"
+  },
+  "keywords": [
+    "falafel",
+    "ast",
+    "modification",
+    "cssauron"
+  ],
+  "author": "Chris Dickinson <chris@neversaw.us>",
+  "license": "MIT",
+  "dependencies": {
+    "cssauron": "X.X.X",
+    "falafel": "X.X.X"
+  }
+}
