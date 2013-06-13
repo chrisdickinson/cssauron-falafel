@@ -122,7 +122,7 @@ function get_children(node) {
     case 'MemberExpression':
       return [node.object, node.property]
 
-    case 'SwitchClause':
+    case 'SwitchCase':
       return [node.test].concat(node.consequent)
 
     case 'CatchClause':
@@ -136,4 +136,6 @@ function get_children(node) {
     case 'Property':
       return [node.key, node.value]
   }
+
+  return []
 }
