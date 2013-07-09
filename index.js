@@ -51,6 +51,10 @@ var map = {
 }
 
 function get_children(node) {
+  if(!node) {
+    return []
+  }
+
   switch(node.type) {
     case 'LabeledStatement':
       return [node.label].concat(node.body.slice())
