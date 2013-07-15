@@ -42,7 +42,7 @@ var map = {
   , 'CallExpression': 'call'
   , 'NewExpression': 'new'
   , 'MemberExpression': 'lookup'
-  , 'SwitchClause': 'case'
+  , 'SwitchCase': 'case'
   , 'CatchClause': 'catch'
   , 'DebuggerStatement': 'debugger'
   , 'ThisExpression': 'this'
@@ -127,7 +127,7 @@ function get_children(node) {
       return [node.object, node.property]
 
     case 'SwitchCase':
-      return [node.test].concat(node.consequent)
+      return [node.test].concat(node.consequent).filter(Boolean)
 
     case 'CatchClause':
       return [node.param, node.body]
