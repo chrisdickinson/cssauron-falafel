@@ -19,7 +19,7 @@
   "author": "Chris Dickinson <chris@neversaw.us>",
   "license": "MIT",
   "dependencies": {
-    "cssauron": "0.X.X"
+    "cssauron": "~1.0.0"
   },
   "devDependencies": {
     "falafel": "~0.3.1"
