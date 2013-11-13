@@ -2,7 +2,32 @@
 
 cssauron bindings for falafel / esprima JS ASTs.
 
-it shortens the esprima names because holy god they're long.
+It shortens the esprima names they're a bit verbose.
+
+It also supports `.relation` classes -- for example:
+
+```
+if(x) {
+
+}
+
+if(x > y) {
+
+}
+
+if(100) {
+
+}
+```
+
+If we wanted to select all of the if tests ("x", "x > y", "100"), we could use the
+following selectors:
+
+```
+if > *:first-child                  // lil verbose!
+.test                               // test the relation from the parent, not the node type
+if > .test                          // more specific -- only ".test" relations from "if" statements.
+```
 
 # node types
 

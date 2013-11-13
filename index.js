@@ -1,12 +1,35 @@
 var cssauron = require('cssauron')
 
 module.exports = cssauron({
-  tag: function(node) { return map[node.type] }
-, parent: 'parent'
-, children: get_children
-, contents: 'source()'
-, attr: function(node, attr) { return node[attr] }
+    tag: function(node) { return map[node.type] }
+  , parent: 'parent'
+  , children: get_children
+  , contents: 'source()'
+  , 'class': get_class
+  , attr: function(node, attr) { return node[attr] }
 })
+
+function get_class(node) {
+  if(!node.parent) {
+    return null
+  }
+
+  for(var key in node.parent) {
+    if(node.parent[key] === node) {
+      return key
+    }
+
+    if(Array.isArray(node.parent[key])) {
+      for(var i = 0, len = node.parent[key].length; i < len; ++i) {
+        if(node.parent[key][i] === node) {
+          return key
+        }
+      }
+    }
+  }
+
+  return null
+}
 
 var map = {
     'LabeledStatement': 'label'

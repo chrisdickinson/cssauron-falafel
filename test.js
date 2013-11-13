@@ -4,6 +4,8 @@ var lang = require('./index')
   , is_ident = lang('id:contains(y)') 
   , results = {}
 
+var find_test = lang('for > .test')
+
 var falafel = require('falafel')
 
 function test() {
@@ -31,6 +33,9 @@ falafel(test+'', function(node) {
   }
   if(is_ident(node)) {
     (results.is_ident = results.is_ident || []).push(node.source())
+  }
+  if(find_test(node)) {
+    console.log(node, '---!')
   }
 })
 
