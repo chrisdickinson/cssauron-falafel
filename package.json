@@ -1,6 +1,6 @@
 {
   "name": "cssauron-falafel",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "falafel bindings for cssauron",
   "main": "index.js",
   "scripts": {
