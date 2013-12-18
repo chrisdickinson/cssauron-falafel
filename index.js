@@ -80,7 +80,7 @@ function get_children(node) {
 
   switch(node.type) {
     case 'LabeledStatement':
-      return [node.label].concat(node.body.slice())
+      return [node.label].concat(node.body)
     case 'BlockStatement':
     case 'Program':
       return node.body
